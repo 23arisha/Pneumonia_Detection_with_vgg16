@@ -52,10 +52,10 @@ def predict(model, image):
 def main():
     st.title("Image Classification with VGG16")
     
-    model_path = "vgg16-chest-4.pth"  # Replace with your model path
+    model_path = "model/vgg16-chest-4.pth"  # Replace with your model path
     model = load_model(model_path)
     
-    uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
     
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
